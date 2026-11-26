@@ -1,0 +1,1839 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+
+<title>ATBARON GLOBAL ENTERPRISES | Industrial Chemicals & Solutions</title>
+<meta name="description" content="ATBARON GLOBAL ENTERPRISES provides industrial chemicals, raw materials and technical consultancy for paint, coatings, adhesives, printing inks and construction chemicals.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --orange:#C45B24;
+    --orange-dark:#A74719;
+    --blue:#168BEA;
+    --blue-dark:#0869B7;
+    --charcoal:#202A32;
+    --dark:#172129;
+    --grey:#68747D;
+    --light:#F5F6F7;
+    --white:#FFFFFF;
+    --border:#E5E8EA;
+    --heading:'Manrope',sans-serif;
+    --body:'DM Sans',sans-serif;
+    --container:1200px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+
+body{
+    font-family:var(--body);
+    color:var(--charcoal);
+    background:white;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+body.loading{overflow:hidden}
+
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+
+.container{
+    width:min(var(--container),calc(100% - 80px));
+    margin:auto;
+}
+
+.section-padding{padding:115px 0}
+
+
+/* PRELOADER */
+
+.preloader{
+    position:fixed;
+    inset:0;
+    background:var(--dark);
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:opacity .7s,visibility .7s;
+}
+
+.preloader.hide{opacity:0;visibility:hidden}
+
+.loader-content{text-align:center;color:white}
+
+.loader-symbol{
+    display:flex;
+    gap:5px;
+    justify-content:center;
+    margin-bottom:22px;
+}
+
+.loader-symbol span{
+    width:5px;
+    height:29px;
+    background:var(--orange);
+    animation:wave .9s infinite ease-in-out;
+}
+
+.loader-symbol span:nth-child(2){background:var(--blue);animation-delay:.15s}
+.loader-symbol span:nth-child(3){background:white;animation-delay:.3s}
+
+.loader-content h2{
+    font-family:var(--heading);
+    font-size:34px;
+    letter-spacing:5px;
+    font-weight:800;
+}
+
+.loader-content h2 span{color:var(--orange)}
+
+.loader-content p{
+    font-size:10px;
+    letter-spacing:5px;
+    margin-top:4px;
+    color:#AEB9C1;
+}
+
+.loader-track{
+    width:180px;
+    height:2px;
+    background:#394650;
+    margin:30px auto 0;
+    overflow:hidden;
+}
+
+.loader-progress{
+    width:40%;
+    height:100%;
+    background:var(--blue);
+    animation:progress 1.4s ease-in-out infinite;
+}
+
+@keyframes wave{
+    0%,100%{transform:scaleY(.45)}
+    50%{transform:scaleY(1)}
+}
+
+@keyframes progress{
+    from{transform:translateX(-110%)}
+    to{transform:translateX(270%)}
+}
+
+
+/* HEADER */
+
+.header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+    transition:box-shadow .3s;
+}
+
+.header.scrolled{box-shadow:0 8px 30px rgba(0,0,0,.07)}
+
+.nav-container{
+    min-height:88px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.brand{
+    display:inline-flex;
+    align-items:center;
+    gap:11px;
+    flex-shrink:0;
+}
+
+.brand-mark{
+    width:43px;
+    height:43px;
+    background:var(--charcoal);
+    color:white;
+    display:grid;
+    place-items:center;
+    position:relative;
+}
+
+.brand-mark::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:4px;
+    background:var(--orange);
+    bottom:0;
+    left:0;
+}
+
+.brand-mark span{
+    font-family:var(--heading);
+    font-weight:800;
+    font-size:26px;
+}
+
+.brand-text{display:flex;flex-direction:column;line-height:1.25}
+.brand-text strong{font-family:var(--heading);font-size:17px;letter-spacing:1.5px;font-weight:800}
+.brand-text small{font-size:8px;letter-spacing:2.5px;color:var(--grey);margin-top:4px}
+
+.navigation{display:flex;align-items:center;gap:31px}
+
+.nav-link{
+    font-size:12px;
+    font-weight:600;
+    color:#59646C;
+    position:relative;
+    transition:color .3s;
+}
+
+.nav-link::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:var(--orange);
+    left:0;
+    bottom:-9px;
+    transition:width .3s;
+}
+
+.nav-link:hover,.nav-link.active{color:var(--charcoal)}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+
+.nav-cta{
+    background:var(--charcoal);
+    color:white;
+    padding:13px 19px;
+    font-size:11px;
+    font-weight:600;
+    display:flex;
+    gap:17px;
+    align-items:center;
+    transition:background .3s;
+}
+
+.nav-cta:hover{background:var(--orange)}
+.nav-cta span{color:#F4A67D}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    width:34px;
+    height:34px;
+}
+
+.menu-toggle span{
+    display:block;
+    height:2px;
+    width:25px;
+    background:var(--charcoal);
+    margin:6px auto;
+    transition:.3s;
+}
+
+.menu-toggle.active span:first-child{transform:translateY(4px) rotate(45deg)}
+.menu-toggle.active span:last-child{transform:translateY(-4px) rotate(-45deg)}
+
+
+/* HERO */
+
+.hero{
+    min-height:760px;
+    height:100svh;
+    max-height:950px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    background:var(--dark);
+    color:white;
+    overflow:hidden;
+    padding-top:80px;
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+    background:url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=85") center/cover;
+    transform:scale(1.04);
+    animation:heroZoom 15s ease-out forwards;
+}
+
+@keyframes heroZoom{to{transform:scale(1)}}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(13,24,32,.96),rgba(13,24,32,.82) 45%,rgba(13,24,32,.30));
+}
+
+.hero-content{position:relative;z-index:2;padding-top:65px}
+
+.hero-label,.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:10px;
+    letter-spacing:2.5px;
+    font-weight:700;
+    color:var(--orange);
+}
+
+.label-line{width:35px;height:2px;background:var(--orange)}
+
+.hero h1{
+    font-family:var(--heading);
+    font-size:clamp(50px,7vw,88px);
+    line-height:1.08;
+    letter-spacing:-4px;
+    margin:29px 0;
+    font-weight:700;
+}
+
+.hero h1 span{color:#A7CFF0}
+
+.hero-description{
+    max-width:540px;
+    color:#D0D8DE;
+    font-size:15px;
+    line-height:1.9;
+}
+
+.hero-actions{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:37px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:23px;
+    padding:16px 23px;
+    border:1px solid transparent;
+    font-size:11px;
+    font-weight:700;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.btn span{font-size:16px}
+
+.btn-primary{background:var(--orange);color:white}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-3px)}
+
+.btn-outline{border-color:rgba(255,255,255,.5);color:white}
+.btn-outline:hover{background:white;color:var(--charcoal)}
+
+.btn-dark{background:var(--charcoal);color:white}
+.btn-dark:hover{background:var(--blue-dark);transform:translateY(-3px)}
+
+.hero-bottom{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+    margin-top:100px;
+    border-top:1px solid rgba(255,255,255,.2);
+    padding-top:23px;
+}
+
+.hero-bottom-item{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    color:#D5DDE3;
+    font-size:10px;
+}
+
+.hero-dot{width:6px;height:6px;background:var(--blue);border-radius:50%}
+
+.hero-index{
+    position:absolute;
+    bottom:60px;
+    right:5%;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-size:10px;
+    color:white;
+    z-index:3;
+}
+
+.hero-index div{width:65px;height:1px;background:rgba(255,255,255,.5)}
+
+
+/* SECTION HEADINGS */
+
+.section-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:65px;
+}
+
+.section-number{font-size:10px;color:#929BA1;letter-spacing:1.5px}
+
+.section-heading-row{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:50px;
+    margin-bottom:55px;
+}
+
+.section-heading-row h2,.industries-heading h2{
+    font-family:var(--heading);
+    font-size:clamp(36px,4.5vw,54px);
+    line-height:1.2;
+    letter-spacing:-2px;
+}
+
+.section-heading-row h2 span,.industries-heading h2 span{color:var(--blue)}
+.section-heading-row>p{max-width:380px;font-size:13px;color:var(--grey)}
+
+
+/* ABOUT */
+
+.introduction{background:white}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:100px;
+}
+
+.intro-heading h2{
+    font-family:var(--heading);
+    font-size:clamp(42px,5.5vw,67px);
+    line-height:1.15;
+    letter-spacing:-3px;
+}
+
+.intro-heading h2 span{color:var(--orange)}
+.intro-text{padding-top:10px}
+.intro-text p{font-size:13px;color:var(--grey);margin-bottom:18px}
+
+.intro-text .large-text{
+    color:var(--charcoal);
+    font-family:var(--heading);
+    font-size:20px;
+    font-weight:600;
+    line-height:1.6;
+}
+
+.text-link{
+    display:inline-flex;
+    gap:25px;
+    margin-top:15px;
+    font-size:12px;
+    font-weight:700;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--orange);
+}
+
+.text-link span{color:var(--orange)}
+
+
+/* IMAGE DIVIDER */
+
+.image-divider{
+    min-height:390px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    background:url("https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+
+.image-divider-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(19,32,42,.93),rgba(19,32,42,.48));
+}
+
+.image-divider-content{position:relative;color:white;z-index:2}
+.eyebrow.light{color:#E89B70}
+
+.image-divider h2{
+    font-family:var(--heading);
+    font-size:clamp(36px,5vw,58px);
+    line-height:1.2;
+    margin-top:23px;
+    letter-spacing:-2px;
+}
+
+
+/* PRODUCTS */
+
+.products{background:var(--light)}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product-card{
+    background:white;
+    border:1px solid #ECEFF0;
+    transition:transform .35s,box-shadow .35s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(25,39,49,.09);
+}
+
+.product-image{
+    height:220px;
+    position:relative;
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+}
+
+.product-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(0deg,rgba(10,20,28,.55),transparent 65%);
+    transition:background .3s;
+}
+
+.product-card:hover .product-image::after{
+    background:linear-gradient(0deg,rgba(10,20,28,.15),rgba(10,20,28,.1));
+}
+
+.paint-image{background-image:url("https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=700&q=85")}
+.adhesive-image{background-image:url("https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=85")}
+.ink-image{background-image:url("https://images.unsplash.com/photo-1509223197845-458d87318791?auto=format&fit=crop&w=700&q=85")}
+.construction-image{background-image:url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=85")}
+
+.product-index{
+    position:absolute;
+    top:15px;
+    left:16px;
+    color:white;
+    font-size:11px;
+    z-index:2;
+    font-weight:700;
+}
+
+.product-info{padding:25px 20px 28px}
+.card-category{font-size:8px;letter-spacing:1.8px;color:var(--orange);font-weight:700}
+
+.product-info h3{
+    font-family:var(--heading);
+    font-size:18px;
+    margin:12px 0;
+    line-height:1.4;
+}
+
+.product-info p{
+    font-size:11px;
+    line-height:1.9;
+    color:var(--grey);
+    min-height:85px;
+}
+
+.card-link{
+    display:flex;
+    justify-content:space-between;
+    border-top:1px solid var(--border);
+    padding-top:17px;
+    margin-top:19px;
+    font-size:10px;
+    font-weight:700;
+}
+
+.card-link span{color:var(--orange);transition:transform .3s}
+.card-link:hover span{transform:translate(4px,-4px)}
+
+
+/* SERVICES */
+
+.services{background:white}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:100px;
+}
+
+.orange-tag{
+    display:inline-block;
+    background:#F9EDE6;
+    color:var(--orange);
+    padding:8px 12px;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1.2px;
+}
+
+.services-intro h2{
+    font-family:var(--heading);
+    font-size:clamp(37px,4.4vw,55px);
+    line-height:1.2;
+    letter-spacing:-2px;
+    margin:25px 0;
+}
+
+.services-intro h2 span{color:var(--blue)}
+.services-intro p{font-size:13px;color:var(--grey);margin-bottom:28px;max-width:420px}
+
+.service-item{
+    display:grid;
+    grid-template-columns:40px 1fr 20px;
+    gap:20px;
+    padding:26px 0;
+    border-bottom:1px solid var(--border);
+    transition:padding .3s;
+}
+
+.service-item:first-child{border-top:1px solid var(--border)}
+.service-item:hover{padding-left:9px}
+
+.service-number{color:var(--orange);font-size:11px;font-weight:700;padding-top:5px}
+.service-item h3{font-family:var(--heading);font-size:16px;margin-bottom:8px}
+.service-item p{font-size:11px;line-height:1.8;color:var(--grey)}
+.service-arrow{color:var(--blue);font-size:17px;transition:transform .3s}
+.service-item:hover .service-arrow{transform:translate(4px,-4px)}
+
+
+/* INDUSTRIES */
+
+.industries{background:var(--light)}
+
+.industries-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:50px;
+    margin-bottom:55px;
+}
+
+.industries-heading p{max-width:370px;color:var(--grey);font-size:13px}
+
+.industries-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid #DFE4E7;
+    border-left:1px solid #DFE4E7;
+}
+
+.industry-item{
+    padding:35px 30px;
+    min-height:195px;
+    border-right:1px solid #DFE4E7;
+    border-bottom:1px solid #DFE4E7;
+    transition:background .3s;
+}
+
+.industry-item:hover{background:white}
+.industry-icon{color:var(--orange);font-family:var(--heading);font-size:13px;font-weight:800;margin-bottom:22px}
+.industry-item h3{font-family:var(--heading);font-size:16px;margin-bottom:8px}
+.industry-item p{font-size:11px;color:var(--grey)}
+
+
+/* WHY ATBARON */
+
+.why-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:570px;
+    background:var(--dark);
+}
+
+.why-image{
+    background:url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85") center/cover;
+    min-height:450px;
+}
+
+.why-content{
+    padding:100px clamp(40px,7vw,100px);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.why-content h2{
+    font-family:var(--heading);
+    font-size:clamp(36px,4.2vw,55px);
+    line-height:1.2;
+    letter-spacing:-2px;
+    margin:28px 0;
+}
+
+.why-content h2 span{color:#A7CFF0}
+.why-content>p{font-size:13px;color:#BBC5CC;line-height:2;margin-bottom:30px;max-width:450px}
+
+
+/* CONTACT */
+
+.contact{background:white}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:100px;
+}
+
+.contact-information h2{
+    font-family:var(--heading);
+    font-size:clamp(40px,5vw,60px);
+    line-height:1.2;
+    letter-spacing:-3px;
+    margin-bottom:24px;
+}
+
+.contact-information h2 span{color:var(--orange)}
+.contact-information>p{font-size:13px;color:var(--grey);max-width:400px}
+
+.contact-details{margin-top:48px}
+.contact-detail{padding:18px 0;border-bottom:1px solid var(--border)}
+
+.detail-label{
+    display:block;
+    font-size:9px;
+    letter-spacing:2px;
+    font-weight:700;
+    color:var(--orange);
+    margin-bottom:7px;
+}
+
+.contact-detail a,.contact-detail p{font-size:13px;font-weight:600}
+.contact-detail a:hover{color:var(--blue)}
+
+.whatsapp-link{
+    display:inline-flex;
+    margin-top:25px;
+    align-items:center;
+    gap:10px;
+    font-size:11px;
+    font-weight:700;
+    color:var(--blue-dark);
+}
+
+.whatsapp-link:hover{color:var(--orange)}
+
+.contact-form-wrapper{
+    padding:42px;
+    background:var(--light);
+    border:1px solid #E8ECEE;
+}
+
+.form-small{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--orange)}
+.form-heading h3{font-family:var(--heading);font-size:27px;margin:9px 0}
+.form-heading p{font-size:12px;color:var(--grey);margin-bottom:28px}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:19px}
+
+.form-group label{display:block;font-size:10px;font-weight:700;margin-bottom:8px}
+
+.form-group input,.form-group textarea,.form-group select{
+    width:100%;
+    background:white;
+    border:1px solid #DFE4E7;
+    outline:none;
+    padding:14px;
+    font-size:11px;
+    color:var(--charcoal);
+    border-radius:0;
+    transition:border .3s,box-shadow .3s;
+}
+
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(22,139,234,.08);
+}
+
+.form-group input::placeholder,.form-group textarea::placeholder{color:#A6AFB5}
+.form-group textarea{resize:vertical}
+
+.form-submit{border:none;width:100%}
+.form-status{font-size:12px;margin-top:13px;min-height:18px}
+.form-status.error{color:#B42318}
+.form-status.success{color:#16794A}
+
+.form-note{font-size:9px;color:#929BA1;margin-top:15px;line-height:1.8}
+
+
+/* FOOTER */
+
+.footer{background:var(--dark);color:white;padding:65px 0 25px}
+
+.footer-main{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    padding-bottom:55px;
+}
+
+.footer-brand .brand-mark{background:white;color:var(--dark)}
+.footer-brand .brand-text strong{color:white}
+.footer-brand .brand-text small{color:#AEB9C1}
+
+.footer-main>p{font-size:12px;color:#ADB8BF;max-width:320px}
+
+.footer-cta{font-size:12px;font-weight:700;border-bottom:1px solid var(--orange);padding-bottom:9px}
+.footer-cta span{color:var(--orange);margin-left:18px}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    padding-top:23px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-bottom>span,.back-top{font-size:9px;color:#9DAAB2}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:10px;color:#CFD5D9;transition:color .3s}
+.footer-links a:hover,.back-top:hover{color:var(--orange)}
+
+
+/* ANIMATIONS */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+
+/* TABLET */
+
+@media(max-width:1050px){
+
+    .container{width:calc(100% - 60px)}
+    .navigation{gap:18px}
+    .nav-link{font-size:11px}
+    .product-grid{grid-template-columns:repeat(2,1fr)}
+    .services-grid,.contact-grid{gap:55px}
+    .intro-grid{gap:55px}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .container{width:calc(100% - 40px)}
+    .section-padding{padding:80px 0}
+    .nav-container{min-height:75px}
+    .brand-mark{width:39px;height:39px}
+    .brand-text strong{font-size:15px}
+
+    .navigation{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:white;
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:0 25px;
+        max-height:0;
+        overflow:hidden;
+        opacity:0;
+        visibility:hidden;
+        transition:max-height .4s,opacity .3s,padding .3s;
+        border-bottom:1px solid var(--border);
+    }
+
+    .navigation.open{
+        max-height:400px;
+        padding:15px 25px 25px;
+        opacity:1;
+        visibility:visible;
+    }
+
+    .nav-link{padding:13px 0;font-size:13px;border-bottom:1px solid #F0F1F2}
+    .nav-link::after{display:none}
+    .nav-cta{display:none}
+    .menu-toggle{display:block}
+
+    .hero{min-height:730px;height:auto;max-height:none}
+    .hero-overlay{background:linear-gradient(90deg,rgba(13,24,32,.95),rgba(13,24,32,.68))}
+    .hero-content{padding-top:105px;padding-bottom:55px}
+    .hero h1{font-size:clamp(46px,11vw,68px);letter-spacing:-2.5px}
+    .hero-description{font-size:13px}
+    .hero-bottom{margin-top:65px;gap:16px;flex-direction:column}
+    .hero-index{display:none}
+
+    .intro-grid,.services-grid,.contact-grid{grid-template-columns:1fr;gap:38px}
+    .section-top{margin-bottom:42px}
+    .intro-heading h2{font-size:47px}
+
+    .section-heading-row,.industries-heading{flex-direction:column;align-items:flex-start;gap:20px}
+    .section-heading-row h2,.industries-heading h2{font-size:39px}
+
+    .product-grid{grid-template-columns:1fr 1fr;gap:13px}
+    .product-image{height:170px}
+    .product-info{padding:19px 14px}
+    .product-info h3{font-size:15px}
+    .product-info p{font-size:10px;min-height:100px}
+
+    .image-divider{min-height:320px}
+    .industries-grid{grid-template-columns:repeat(2,1fr)}
+    .industry-item{padding:25px 17px;min-height:180px}
+    .industry-item h3{font-size:14px}
+
+    .why-section{grid-template-columns:1fr}
+    .why-image{min-height:300px}
+    .why-content{padding:65px 25px}
+    .why-content h2{font-size:42px}
+
+    .contact-form-wrapper{padding:27px 20px}
+    .footer-main{flex-direction:column;align-items:flex-start;gap:23px}
+    .footer-bottom{align-items:flex-start;flex-direction:column}
+    .footer-links{flex-wrap:wrap}
+
+}
+
+
+/* SMALL MOBILE */
+
+@media(max-width:450px){
+
+    .container{width:calc(100% - 32px)}
+    .hero h1{font-size:44px}
+    .hero-actions{align-items:stretch;flex-direction:column}
+    .hero-actions .btn{justify-content:space-between}
+
+    .product-grid{grid-template-columns:1fr}
+    .product-image{height:220px}
+    .product-info p{min-height:auto}
+
+    .industries-grid{grid-template-columns:1fr}
+    .industry-item{min-height:150px}
+
+    .form-row{grid-template-columns:1fr;gap:0}
+    .section-number{font-size:8px}
+    .contact-information h2{font-size:43px}
+
+}
+
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,*::before,*::after{
+        scroll-behavior:auto!important;
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+    }
+
+    .reveal{opacity:1;transform:none}
+
+}
+
+.brand-mark {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brand-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+</style>
+</head>
+
+<body class="loading">
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+    <div class="loader-content">
+        <div class="loader-symbol">
+            <span></span><span></span><span></span>
+        </div>
+        <h2>ATBARON<span>.</span></h2>
+        <p>GLOBAL ENTERPRISES</p>
+        <div class="loader-track">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="container nav-container">
+
+        <a href="#home" class="brand">
+            <div class="brand-mark">
+    <img src="images/atbaron-logo.png" alt="Atbaron Global Enterprises Logo">
+</div>
+            <div class="brand-text">
+                <strong>ATBARON</strong>
+                <small>GLOBAL ENTERPRISES</small>
+            </div>
+        </a>
+
+        <nav class="navigation" id="navigation">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About Us</a>
+            <a href="#products" class="nav-link">Products & Services</a>
+            <a href="#industries" class="nav-link">Industries</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-cta">
+            Request a Quote <span>↗</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            <span></span><span></span>
+        </button>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-image"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <div class="hero-label reveal">
+            
+            INDUSTRIAL CHEMICALS & SOLUTIONS
+        </div>
+
+        <h1 class="reveal">
+            Materials that<br>
+            <span>move industries.</span>
+        </h1>
+
+        <p class="hero-description reveal">
+            ATBARON GLOBAL ENTERPRISES provides industrial
+            chemicals, raw materials and technical solutions
+            supporting manufacturers and industrial operations.
+        </p>
+
+        <div class="hero-actions reveal">
+            <a href="#products" class="btn btn-primary">
+                Explore Our Expertise <span>↗</span>
+            </a>
+            <a href="#about" class="btn btn-outline">
+                Discover ATBARON
+            </a>
+        </div>
+
+        <div class="hero-bottom reveal">
+            <div class="hero-bottom-item"><span class="hero-dot"></span>Industrial Raw Materials</div>
+            <div class="hero-bottom-item"><span class="hero-dot"></span>Technical Consultancy</div>
+            <div class="hero-bottom-item"><span class="hero-dot"></span>Industrial Solutions</div>
+        </div>
+
+    </div>
+
+    <div class="hero-index">
+        <span>01</span><div></div><span>04</span>
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="introduction section-padding" id="about">
+    <div class="container">
+
+        <div class="section-top reveal">
+            <span class="eyebrow">ABOUT ATBARON</span>
+            <span class="section-number">01 / INTRODUCTION</span>
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="intro-heading reveal">
+                <h2>
+                    Supporting the<br>
+                    industries that<br>
+                    <span>build tomorrow.</span>
+                </h2>
+            </div>
+
+            <div class="intro-text reveal">
+
+                <p class="large-text">
+                    Industrial operations depend on the right
+                    materials, technical knowledge and dependable
+                    solutions.
+                </p>
+
+                <p>
+                    ATBARON GLOBAL ENTERPRISES operates within
+                    the industrial chemicals and raw materials
+                    sector, with a focus on supporting manufacturers
+                    and factories across specialised applications.
+                </p>
+
+                <p>
+                    Our business areas include materials for paints
+                    and coatings, adhesives, printing inks and
+                    construction chemicals, alongside technical
+                    consultancy and industrial support services.
+                </p>
+
+                <a href="#contact" class="text-link">
+                    Connect with our team <span>↗</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- IMAGE DIVIDER -->
+<section class="image-divider">
+    <div class="image-divider-overlay"></div>
+
+    <div class="container image-divider-content reveal">
+        <span class="eyebrow light">INDUSTRIAL KNOWLEDGE. MATERIAL SOLUTIONS.</span>
+        <h2>Connecting materials<br>with industrial needs.</h2>
+    </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="products section-padding" id="products">
+    <div class="container">
+
+        <div class="section-top reveal">
+            <span class="eyebrow">WHAT WE DO</span>
+            <span class="section-number">02 / PRODUCTS</span>
+        </div>
+
+        <div class="section-heading-row reveal">
+            <div>
+                <h2>Industrial materials.<br><span>Specialised applications.</span></h2>
+            </div>
+            <p>
+                Our product focus covers key material categories
+                used across different manufacturing and industrial
+                processes.
+            </p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card reveal">
+                <div class="product-image paint-image">
+                    <span class="product-index">01</span>
+                </div>
+                <div class="product-info">
+                    <span class="card-category">MATERIAL CATEGORY</span>
+                    <h3>Paints & Coatings</h3>
+                    <p>Industrial raw materials and chemical inputs for paint and coating applications.</p>
+                    <a href="#contact" class="card-link">Make an enquiry <span>↗</span></a>
+                </div>
+            </article>
+
+            <article class="product-card reveal">
+                <div class="product-image adhesive-image">
+                    <span class="product-index">02</span>
+                </div>
+                <div class="product-info">
+                    <span class="card-category">MATERIAL CATEGORY</span>
+                    <h3>Adhesives</h3>
+                    <p>Chemical and raw material categories for industrial adhesive manufacturing and applications.</p>
+                    <a href="#contact" class="card-link">Make an enquiry <span>↗</span></a>
+                </div>
+            </article>
+
+            <article class="product-card reveal">
+                <div class="product-image ink-image">
+                    <span class="product-index">03</span>
+                </div>
+                <div class="product-info">
+                    <span class="card-category">MATERIAL CATEGORY</span>
+                    <h3>Printing Inks</h3>
+                    <p>Industrial chemical inputs and raw materials for printing ink applications.</p>
+                    <a href="#contact" class="card-link">Make an enquiry <span>↗</span></a>
+                </div>
+            </article>
+
+            <article class="product-card reveal">
+                <div class="product-image construction-image">
+                    <span class="product-index">04</span>
+                </div>
+                <div class="product-info">
+                    <span class="card-category">MATERIAL CATEGORY</span>
+                    <h3>Construction Chemicals</h3>
+                    <p>Chemical materials for specialised construction and building applications.</p>
+                    <a href="#contact" class="card-link">Make an enquiry <span>↗</span></a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="services section-padding">
+    <div class="container">
+
+        <div class="section-top reveal">
+            <span class="eyebrow">TECHNICAL EXPERTISE</span>
+            <span class="section-number">03 / SERVICES</span>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="services-intro reveal">
+
+                <span class="orange-tag">BEYOND MATERIAL SUPPLY</span>
+
+                <h2>Technical insight.<br><span>Practical solutions.</span></h2>
+
+                <p>
+                    Industrial requirements often extend beyond
+                    the supply of materials. Technical understanding
+                    and professional support also play an important
+                    role in industrial operations.
+                </p>
+
+                <a href="#contact" class="btn btn-dark">
+                    Discuss Your Requirements <span>↗</span>
+                </a>
+
+            </div>
+
+            <div class="service-list">
+
+                <article class="service-item reveal">
+                    <div class="service-number">01</div>
+                    <div>
+                        <h3>Industrial Chemical Supply</h3>
+                        <p>Supply of industrial chemicals and raw materials for manufacturing and specialised industrial applications.</p>
+                    </div>
+                    <span class="service-arrow">↗</span>
+                </article>
+
+                <article class="service-item reveal">
+                    <div class="service-number">02</div>
+                    <div>
+                        <h3>Regulatory Affairs Consultancy</h3>
+                        <p>Consultancy relating to regulatory affairs within the chemical and industrial sector.</p>
+                    </div>
+                    <span class="service-arrow">↗</span>
+                </article>
+
+                <article class="service-item reveal">
+                    <div class="service-number">03</div>
+                    <div>
+                        <h3>Chemistry & Analytical Services</h3>
+                        <p>Professional chemistry and analytical support through qualified specialists, including chartered chemists and analysts.</p>
+                    </div>
+                    <span class="service-arrow">↗</span>
+                </article>
+
+                <article class="service-item reveal">
+                    <div class="service-number">04</div>
+                    <div>
+                        <h3>Industrial Solutions</h3>
+                        <p>Technical and material-oriented support addressing the requirements of factories and industrial operations.</p>
+                    </div>
+                    <span class="service-arrow">↗</span>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- INDUSTRIES -->
+<section class="industries section-padding" id="industries">
+    <div class="container">
+
+        <div class="section-top reveal">
+            <span class="eyebrow">INDUSTRIES WE SERVE</span>
+            <span class="section-number">04 / APPLICATIONS</span>
+        </div>
+
+        <div class="industries-heading reveal">
+            <h2>Supporting diverse<br><span>industrial sectors.</span></h2>
+            <p>
+                Our areas of focus align with the material and
+                technical requirements of manufacturing,
+                laboratory and industrial environments.
+            </p>
+        </div>
+
+        <div class="industries-grid">
+
+            <div class="industry-item reveal">
+                <div class="industry-icon">01</div>
+                <h3>Paint Manufacturers</h3>
+                <p>Materials for paint and coating production.</p>
+            </div>
+
+            <div class="industry-item reveal">
+                <div class="industry-icon">02</div>
+                <h3>Chemical Manufacturers</h3>
+                <p>Industrial raw materials and chemical inputs.</p>
+            </div>
+
+            <div class="industry-item reveal">
+                <div class="industry-icon">03</div>
+                <h3>Laboratories</h3>
+                <p>Technical and analytical service requirements.</p>
+            </div>
+
+            <div class="industry-item reveal">
+                <div class="industry-icon">04</div>
+                <h3>Construction Industry</h3>
+                <p>Materials for construction chemical applications.</p>
+            </div>
+
+            <div class="industry-item reveal">
+                <div class="industry-icon">05</div>
+                <h3>Printing Industry</h3>
+                <p>Materials for printing ink applications.</p>
+            </div>
+
+            <div class="industry-item reveal">
+                <div class="industry-icon">06</div>
+                <h3>Industrial Factories</h3>
+                <p>Industrial material and technical requirements.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- WHY ATBARON -->
+<section class="why-section">
+
+    <div class="why-image"></div>
+
+    <div class="why-content">
+
+        <span class="eyebrow light reveal">THE ATBARON APPROACH</span>
+
+        <h2 class="reveal">
+            Understanding<br>
+            industry starts with<br>
+            <span>understanding needs.</span>
+        </h2>
+
+        <p class="reveal">
+            We recognise that every industrial operation has
+            specific material and technical requirements.
+            Our approach centres on understanding those
+            requirements and identifying appropriate
+            industrial solutions.
+        </p>
+
+        <a href="#contact" class="btn btn-primary reveal">
+            Speak With Us <span>↗</span>
+        </a>
+
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact section-padding" id="contact">
+    <div class="container">
+
+        <div class="section-top reveal">
+            <span class="eyebrow">GET IN TOUCH</span>
+            <span class="section-number">05 / CONTACT</span>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-information reveal">
+
+                <h2>Let's discuss<br>your <span>requirements.</span></h2>
+
+                <p>
+                    For enquiries about industrial chemicals,
+                    raw materials, technical consultancy or
+                    industrial solutions, contact our team.
+                </p>
+
+                <div class="contact-details">
+
+                    <div class="contact-detail">
+                        <span class="detail-label">PHONE</span>
+                        <a href="tel:+2340000000000" id="phoneLink">+234 XXX XXX XXXX</a>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span class="detail-label">EMAIL</span>
+                        <a href="mailto:info@atbaron.com" id="emailLink">info@atbaron.com</a>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span class="detail-label">ADDRESS</span>
+                        <p>Business address to be confirmed</p>
+                    </div>
+
+                </div>
+
+                <a href="#" class="whatsapp-link" id="whatsappLink" target="_blank" rel="noopener">
+                    <span>◉</span> Contact via WhatsApp ↗
+                </a>
+
+            </div>
+
+
+            <div class="contact-form-wrapper reveal">
+
+                <div class="form-heading">
+                    <span class="form-small">ENQUIRY FORM</span>
+                    <h3>Send an enquiry</h3>
+                    <p>Complete the form below with your requirements.</p>
+                </div>
+
+                <form id="contactForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="fullName">Full name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyName">Company name</label>
+                            <input type="text" id="companyName" name="companyName" placeholder="Company name">
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="email">Email address *</label>
+                            <input type="email" id="email" name="email" placeholder="name@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+234" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requirement">Enquiry type *</label>
+                        <select id="requirement" name="requirement" required>
+                            <option value="">Select an enquiry type</option>
+                            <option>Industrial Chemical Supply</option>
+                            <option>Paints & Coatings</option>
+                            <option>Adhesives</option>
+                            <option>Printing Inks</option>
+                            <option>Construction Chemicals</option>
+                            <option>Regulatory Affairs Consultancy</option>
+                            <option>Chemistry & Analytical Services</option>
+                            <option>Other Industrial Solutions</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity required (if applicable)</label>
+                        <input type="text" id="quantity" name="quantity" placeholder="Enter quantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional requirements *</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-submit">
+                        Submit Enquiry <span>↗</span>
+                    </button>
+
+                    <p class="form-status" id="formStatus" aria-live="polite"></p>
+
+                    <p class="form-note">
+                        Your enquiry will be prepared for submission
+                        to the company's designated email address.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-main">
+
+            <a href="#home" class="brand footer-brand">
+                <div class="brand-mark">
+    <img src="images/atbaron-logo.png" alt="Atbaron Global Enterprises Logo">
+</div>
+                <div class="brand-text">
+                    <strong>ATBARON</strong>
+                    <small>GLOBAL ENTERPRISES</small>
+                </div>
+            </a>
+
+            <p>
+                Industrial chemicals, raw materials and
+                technical solutions for industrial applications.
+            </p>
+
+            <a href="#contact" class="footer-cta">
+                Start an enquiry <span>↗</span>
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="currentYear"></span>
+                ATBARON GLOBAL ENTERPRISES. All rights reserved.
+            </span>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#products">Products & Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <a href="#home" class="back-top">BACK TO TOP ↑</a>
+
+        </div>
+
+    </div>
+</footer>
+
+
+<script>
+// ============================================
+// ATBARON GLOBAL ENTERPRISES
+// JAVASCRIPT
+// ============================================
+
+
+// COMPANY CONTACT CONFIGURATION
+
+const COMPANY = {
+    email: "info@atbaron.com",
+    whatsapp: "2340000000000",
+    phone: "+234 XXX XXX XXXX"
+};
+
+
+// PRELOADER
+
+const preloader = document.getElementById("preloader");
+
+function hidePreloader() {
+    if (!preloader) return;
+
+    setTimeout(() => {
+        preloader.classList.add("hide");
+        document.body.classList.remove("loading");
+    }, 500);
+}
+
+window.addEventListener("load", hidePreloader);
+
+setTimeout(hidePreloader, 5000);
+
+
+// HEADER SCROLL EFFECT
+
+const header = document.getElementById("header");
+
+function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+}
+
+window.addEventListener("scroll", updateHeader, {passive:true});
+updateHeader();
+
+
+// MOBILE NAVIGATION
+
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function closeMenu() {
+    navigation.classList.remove("open");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+}
+
+menuToggle.addEventListener("click", function() {
+
+    navigation.classList.toggle("open");
+    menuToggle.classList.toggle("active");
+
+    const isOpen = navigation.classList.contains("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+});
+
+navLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("click", function(event) {
+
+    if (
+        !navigation.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ) {
+        closeMenu();
+    }
+
+});
+
+window.addEventListener("resize", function() {
+    if (window.innerWidth > 768) closeMenu();
+});
+
+
+// SCROLL REVEAL ANIMATIONS
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if ("IntersectionObserver" in window && !prefersReducedMotion) {
+
+    const revealObserver = new IntersectionObserver(
+        function(entries, observer) {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold:0.12,
+            rootMargin:"0px 0px -40px 0px"
+        }
+    );
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+        element.classList.add("visible");
+    });
+
+}
+
+
+// ACTIVE NAVIGATION
+
+const sections = document.querySelectorAll("main section[id]");
+
+if ("IntersectionObserver" in window) {
+
+    const sectionObserver = new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const currentId = entry.target.id;
+
+                    navLinks.forEach(link => {
+
+                        link.classList.remove("active");
+
+                        if (link.getAttribute("href") === "#" + currentId) {
+                            link.classList.add("active");
+                        }
+
+                    });
+
+                }
+
+            });
+
+        },
+        {rootMargin:"-30% 0px -60% 0px"}
+    );
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+}
+
+
+// COPYRIGHT YEAR
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+
+// CONTACT INFORMATION
+
+const emailLink = document.getElementById("emailLink");
+const phoneLink = document.getElementById("phoneLink");
+const whatsappLink = document.getElementById("whatsappLink");
+
+emailLink.href = "mailto:" + COMPANY.email;
+emailLink.textContent = COMPANY.email;
+
+phoneLink.href = "tel:" + COMPANY.phone.replace(/\s/g, "");
+phoneLink.textContent = COMPANY.phone;
+
+whatsappLink.href = "https://wa.me/" + COMPANY.whatsapp;
+
+
+// CONTACT FORM
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+    }
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const companyName = document.getElementById("companyName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const requirement = document.getElementById("requirement").value;
+    const quantity = document.getElementById("quantity").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const subject = encodeURIComponent(
+        "Website Enquiry - " + requirement
+    );
+
+    const body = encodeURIComponent(
+
+`ATBARON GLOBAL ENTERPRISES
+WEBSITE ENQUIRY
+
+Full Name: ${fullName}
+
+Company Name: ${companyName || "Not provided"}
+
+Email Address: ${email}
+
+Phone Number: ${phone}
+
+Enquiry Type: ${requirement}
+
+Quantity Required: ${quantity || "Not specified"}
+
+Additional Requirements:
+
+${message}
+
+This enquiry was submitted through the ATBARON website.`
+
+    );
+
+    const mailtoLink =
+        `mailto:${COMPANY.email}?subject=${subject}&body=${body}`;
+
+    formStatus.className = "form-status";
+    formStatus.textContent = "Opening your email application...";
+
+    window.location.href = mailtoLink;
+
+    formStatus.classList.add("success");
+    formStatus.textContent =
+        "Your email application should open with your enquiry prepared. Please send the email to complete your submission.";
+
+});
+
+
+// END OF ATBARON WEBSITE
+</script>
+
+</body>
+</html>
